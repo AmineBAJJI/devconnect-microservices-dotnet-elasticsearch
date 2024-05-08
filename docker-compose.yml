@@ -1,0 +1,112 @@
+﻿services:
+  projectservice:
+    image: projectservice
+    build:
+      context: .
+      dockerfile: ProjectService/Dockerfile
+    networks:
+      - my_network
+    ports:
+      - "8001:8001"
+
+  searchservice:
+    image: searchservice
+    build:
+      context: .
+      dockerfile: SearchService/Dockerfile
+    networks:
+      - my_network
+    depends_on:
+      - elasticsearch
+    ports:
+      - "8002:8002"
+
+  profileservice:
+    image: profileservice
+    build:
+      context: .
+      dockerfile: ProfileService/Dockerfile
+    depends_on:
+      - sql-server
+    networks:
+      - my_network
+    ports:
+      - "8003:8003"
+
+  postservice:
+    image: postservice
+    build:
+      context: .
+      dockerfile: PostService/Dockerfile
+    depends_on:
+      - sql-server
+    networks:
+      - my_network
+    ports:
+      - "8004:8004" 
+
+  rabbitmq:
+    image: rabbitmq:management
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=mypass
+    expose:
+      - "5672"
+    ports:
+      - "8012:15672" 
+    networks:
+      - my_network
+
+  sql-server:
+    image: mcr.microsoft.com/azure-sql-edge
+    environment:
+      SA_PASSWORD: "Profile@123ok"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - my_network
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "admin"
+      MONGO_INITDB_ROOT_PASSWORD: "adminpassword"
+    ports:
+      - "27017:27017"
+    networks:
+      - my_network
+
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+    ports:
+      - "9200:9200"  # Exporting port 9200 of the container to port 9200 on the host
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    environment:
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    networks:
+      - my_network
+
+  kibana:
+    container_name: kibana
+    image: arm64v8/kibana:7.17.20
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  elasticsearch-data:

@@ -1,0 +1,92 @@
+﻿services:
+  searchservice:
+    image: searchservice
+    build:
+      context: .
+      dockerfile: SearchService/Dockerfile
+    ports:
+      - "8001:8080"
+    networks:
+      - devconnect-network  
+
+  projectservice:
+    image: projectservice
+    build:
+      context: .
+      dockerfile: ProjectService/Dockerfile
+    ports:
+      - "8002:8080"
+    networks:
+      - devconnect-network
+  profileservice:
+    image: profileservice
+    build:
+      context: .
+      dockerfile: ProfileService/Dockerfile
+    ports:
+      - "8003:8080"
+    depends_on:
+      - sql-server
+    environment:
+      RABBITMQ_HOST: "devconnect-microservices-rabbitmq-1"
+      RABBITMQ_USERNAME: "user"
+      RABBITMQ_PASSWORD: "mypass"
+      ASPNETCORE_ENVIRONMENT: "Production"
+      ConnectionStrings__Profile: "Server=devconnect-microservices-sql-server-1,1433;User Id=sa;Password=Profile@123ok;TrustServerCertificate=True"
+    networks:
+      - devconnect-network
+  
+  eventindexer:
+    image: eventindexer
+    build:
+      context: .
+      dockerfile: EventIndexer/Dockerfile
+    networks:
+      - devconnect-network
+  
+  postservice:
+    image: postservice
+    build:
+      context: .
+      dockerfile: PostService/Dockerfile
+    ports:
+      - "8004:8080"
+    networks:
+      - devconnect-network
+  
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - devconnect-network
+    
+  rabbitmq:
+    image: rabbitmq:management
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=mypass
+    expose:
+      - "5672"
+    ports:
+      - "8012:15672"
+    networks:
+      - devconnect-network
+  
+  sql-server:
+    image: mcr.microsoft.com/azure-sql-edge
+    environment:
+      SA_PASSWORD: "Profile@123ok"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - devconnect-network
+
+networks:
+  devconnect-network:
+    driver: bridge

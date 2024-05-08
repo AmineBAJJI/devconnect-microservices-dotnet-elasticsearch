@@ -1,0 +1,96 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  eventindexer:
+    build:
+      context: "/Users/aminebajji/RiderProjects/devconnect-microservices"
+      dockerfile: "EventIndexer/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/EventIndexer.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "eventindexer:dev"
+    ports: []
+    volumes:
+    - "/Users/aminebajji/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices/EventIndexer:/app:rw"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices:/src:rw"
+    working_dir: "/app"
+  postservice:
+    build:
+      context: "/Users/aminebajji/RiderProjects/devconnect-microservices"
+      dockerfile: "PostService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/PostService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "postservice:dev"
+    ports: []
+    volumes:
+    - "/Users/aminebajji/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices/PostService:/app:rw"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices:/src:rw"
+    working_dir: "/app"
+  profileservice:
+    build:
+      context: "/Users/aminebajji/RiderProjects/devconnect-microservices"
+      dockerfile: "ProfileService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/ProfileService.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "profileservice:dev"
+    ports: []
+    volumes:
+    - "/Users/aminebajji/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices/ProfileService:/app:rw"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices:/src:rw"
+    working_dir: "/app"
+  projectservice:
+    build:
+      context: "/Users/aminebajji/RiderProjects/devconnect-microservices"
+      dockerfile: "ProjectService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/ProjectService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "projectservice:dev"
+    ports: []
+    volumes:
+    - "/Users/aminebajji/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices/ProjectService:/app:rw"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices:/src:rw"
+    working_dir: "/app"
+  searchservice:
+    build:
+      context: "/Users/aminebajji/RiderProjects/devconnect-microservices"
+      dockerfile: "SearchService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/SearchService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "searchservice:dev"
+    ports: []
+    volumes:
+    - "/Users/aminebajji/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices/SearchService:/app:rw"
+    - "/Users/aminebajji/RiderProjects/devconnect-microservices:/src:rw"
+    working_dir: "/app"
