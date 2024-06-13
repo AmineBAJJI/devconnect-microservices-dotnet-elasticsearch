@@ -170,3 +170,4 @@
 /Users/aminebajji/RiderProjects/devconnect-microservices/SearchService/bin/Debug/net8.0/runtimes/linux/native/libmongocrypt.so
 /Users/aminebajji/RiderProjects/devconnect-microservices/SearchService/bin/Debug/net8.0/runtimes/osx/native/libmongocrypt.dylib
 /Users/aminebajji/RiderProjects/devconnect-microservices/SearchService/bin/Debug/net8.0/runtimes/win/native/mongocrypt.dll
+/Users/aminebajji/RiderProjects/devconnect-microservices/SearchService/obj/Debug/net8.0/SearchService.sourcelink.json

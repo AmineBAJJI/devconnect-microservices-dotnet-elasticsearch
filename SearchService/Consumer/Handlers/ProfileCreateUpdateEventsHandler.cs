@@ -46,7 +46,6 @@ namespace SearchService.Consumer.Handlers
                 {
                    
                     var indexResponse = await _client.IndexAsync(@event, idx => idx.Index(_indexName));
-                    Console.WriteLine("Je suis ici");
                     if (!indexResponse.IsValid)
                     {
                         var errorMsg = "Problem inserting document to Elasticsearch.";
