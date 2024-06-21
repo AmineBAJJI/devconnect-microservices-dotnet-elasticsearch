@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mQzuHrQoUMTvx5Vvg1AYV2S995v6wjcbUByVFWHNI21QqaXYu2mZiLcH+Q0u3xR3xyMgnKN+fdnrHr2QFO9Kfw==",
+  "dgSpecHash": "Cxhf5f5HGJqdLlkEqRVQ52x0Px6UtbqrUW0A4PzvmP+xdVagOT+0IqxGAI7pxb5ZfrH5CbSWANMqAfHYyJuGsA==",
   "success": true,
-  "projectFilePath": "/Users/aminebajji/RiderProjects/devconnect-microservices/Shared/Shared.csproj",
+  "projectFilePath": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/Shared/Shared.csproj",
   "expectedPackageFiles": [
     "/Users/aminebajji/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
     "/Users/aminebajji/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",

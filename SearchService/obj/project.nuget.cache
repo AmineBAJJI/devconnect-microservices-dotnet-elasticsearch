@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bVqcbQ8cpCGivZADY6Pnv/KpWGXbGlVD0s9gsfJyGWgmtz292DMnRc9NqkRYUPw2NpBbGuelTdlgkljeFM9fBQ==",
+  "dgSpecHash": "zDKE8Ixl4m7SsWevFTFEPDf/CBVLzvcotjusKsI+iM9gif9bJTkKwvr4Fhisd4Ipb1uH2IWuZ07DJAZyMmMCMQ==",
   "success": true,
-  "projectFilePath": "/Users/aminebajji/RiderProjects/devconnect-microservices/SearchService/SearchService.csproj",
+  "projectFilePath": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/SearchService/SearchService.csproj",
   "expectedPackageFiles": [
     "/Users/aminebajji/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
     "/Users/aminebajji/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",

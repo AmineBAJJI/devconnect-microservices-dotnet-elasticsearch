@@ -1248,11 +1248,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aminebajji/RiderProjects/devconnect-microservices/Shared/Shared.csproj",
+      "projectUniqueName": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/Shared/Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "/Users/aminebajji/RiderProjects/devconnect-microservices/Shared/Shared.csproj",
+      "projectPath": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/Shared/Shared.csproj",
       "packagesPath": "/Users/aminebajji/.nuget/packages/",
-      "outputPath": "/Users/aminebajji/RiderProjects/devconnect-microservices/Shared/obj/",
+      "outputPath": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/Shared/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/aminebajji/.nuget/NuGet/NuGet.Config"

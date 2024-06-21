@@ -2096,11 +2096,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aminebajji/RiderProjects/devconnect-microservices/ProjectService/ProjectService.csproj",
+      "projectUniqueName": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/ProjectService/ProjectService.csproj",
       "projectName": "ProjectService",
-      "projectPath": "/Users/aminebajji/RiderProjects/devconnect-microservices/ProjectService/ProjectService.csproj",
+      "projectPath": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/ProjectService/ProjectService.csproj",
       "packagesPath": "/Users/aminebajji/.nuget/packages/",
-      "outputPath": "/Users/aminebajji/RiderProjects/devconnect-microservices/ProjectService/obj/",
+      "outputPath": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/ProjectService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/aminebajji/.nuget/NuGet/NuGet.Config"
@@ -2115,8 +2115,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/aminebajji/RiderProjects/devconnect-microservices/Shared/Shared.csproj": {
-              "projectPath": "/Users/aminebajji/RiderProjects/devconnect-microservices/Shared/Shared.csproj"
+            "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/Shared/Shared.csproj": {
+              "projectPath": "/Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/Shared/Shared.csproj"
             }
           }
         }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Events
-build_property.ProjectDir = /Users/aminebajji/RiderProjects/devconnect-microservices/Shared/
+build_property.ProjectDir = /Users/aminebajji/devconnect-microservices-dotnet-elasticsearch/Shared/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
